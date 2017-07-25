@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E29A5E51F2764450068D58F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A5E41F2764450068D58F /* main.m */; };
+		3E29A5E81F2764450068D58F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A5E71F2764450068D58F /* AppDelegate.m */; };
+		3E29A5EB1F2764450068D58F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A5EA1F2764450068D58F /* ViewController.m */; };
+		3E29A5EE1F2764450068D58F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E29A5EC1F2764450068D58F /* Main.storyboard */; };
+		3E29A5F01F2764450068D58F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E29A5EF1F2764450068D58F /* Assets.xcassets */; };
+		3E29A5F31F2764450068D58F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E29A5F11F2764450068D58F /* LaunchScreen.storyboard */; };
+		3E29A5FE1F2764460068D58F /* SqliCheckingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A5FD1F2764460068D58F /* SqliCheckingTests.m */; };
+		3E29A6091F2764460068D58F /* SqliCheckingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A6081F2764460068D58F /* SqliCheckingUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3E29A5FA1F2764460068D58F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E29A5D81F2764450068D58F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E29A5DF1F2764450068D58F;
+			remoteInfo = SqliChecking;
+		};
+		3E29A6051F2764460068D58F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E29A5D81F2764450068D58F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E29A5DF1F2764450068D58F;
+			remoteInfo = SqliChecking;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3E29A5E01F2764450068D58F /* SqliChecking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SqliChecking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E29A5E41F2764450068D58F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3E29A5E61F2764450068D58F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3E29A5E71F2764450068D58F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3E29A5E91F2764450068D58F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3E29A5EA1F2764450068D58F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3E29A5ED1F2764450068D58F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3E29A5EF1F2764450068D58F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3E29A5F21F2764450068D58F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3E29A5F41F2764450068D58F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E29A5F91F2764460068D58F /* SqliCheckingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SqliCheckingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E29A5FD1F2764460068D58F /* SqliCheckingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SqliCheckingTests.m; sourceTree = "<group>"; };
+		3E29A5FF1F2764460068D58F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E29A6041F2764460068D58F /* SqliCheckingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SqliCheckingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E29A6081F2764460068D58F /* SqliCheckingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SqliCheckingUITests.m; sourceTree = "<group>"; };
+		3E29A60A1F2764460068D58F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3E29A5DD1F2764450068D58F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E29A5F61F2764460068D58F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E29A6011F2764460068D58F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3E29A5D71F2764450068D58F = {
+			isa = PBXGroup;
+			children = (
+				3E29A5E21F2764450068D58F /* SqliChecking */,
+				3E29A5FC1F2764460068D58F /* SqliCheckingTests */,
+				3E29A6071F2764460068D58F /* SqliCheckingUITests */,
+				3E29A5E11F2764450068D58F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3E29A5E11F2764450068D58F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3E29A5E01F2764450068D58F /* SqliChecking.app */,
+				3E29A5F91F2764460068D58F /* SqliCheckingTests.xctest */,
+				3E29A6041F2764460068D58F /* SqliCheckingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3E29A5E21F2764450068D58F /* SqliChecking */ = {
+			isa = PBXGroup;
+			children = (
+				3E29A5E61F2764450068D58F /* AppDelegate.h */,
+				3E29A5E71F2764450068D58F /* AppDelegate.m */,
+				3E29A5E91F2764450068D58F /* ViewController.h */,
+				3E29A5EA1F2764450068D58F /* ViewController.m */,
+				3E29A5EC1F2764450068D58F /* Main.storyboard */,
+				3E29A5EF1F2764450068D58F /* Assets.xcassets */,
+				3E29A5F11F2764450068D58F /* LaunchScreen.storyboard */,
+				3E29A5F41F2764450068D58F /* Info.plist */,
+				3E29A5E31F2764450068D58F /* Supporting Files */,
+			);
+			path = SqliChecking;
+			sourceTree = "<group>";
+		};
+		3E29A5E31F2764450068D58F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3E29A5E41F2764450068D58F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3E29A5FC1F2764460068D58F /* SqliCheckingTests */ = {
+			isa = PBXGroup;
+			children = (
+				3E29A5FD1F2764460068D58F /* SqliCheckingTests.m */,
+				3E29A5FF1F2764460068D58F /* Info.plist */,
+			);
+			path = SqliCheckingTests;
+			sourceTree = "<group>";
+		};
+		3E29A6071F2764460068D58F /* SqliCheckingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3E29A6081F2764460068D58F /* SqliCheckingUITests.m */,
+				3E29A60A1F2764460068D58F /* Info.plist */,
+			);
+			path = SqliCheckingUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3E29A5DF1F2764450068D58F /* SqliChecking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E29A60D1F2764460068D58F /* Build configuration list for PBXNativeTarget "SqliChecking" */;
+			buildPhases = (
+				3E29A5DC1F2764450068D58F /* Sources */,
+				3E29A5DD1F2764450068D58F /* Frameworks */,
+				3E29A5DE1F2764450068D58F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SqliChecking;
+			productName = SqliChecking;
+			productReference = 3E29A5E01F2764450068D58F /* SqliChecking.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3E29A5F81F2764460068D58F /* SqliCheckingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E29A6101F2764460068D58F /* Build configuration list for PBXNativeTarget "SqliCheckingTests" */;
+			buildPhases = (
+				3E29A5F51F2764460068D58F /* Sources */,
+				3E29A5F61F2764460068D58F /* Frameworks */,
+				3E29A5F71F2764460068D58F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E29A5FB1F2764460068D58F /* PBXTargetDependency */,
+			);
+			name = SqliCheckingTests;
+			productName = SqliCheckingTests;
+			productReference = 3E29A5F91F2764460068D58F /* SqliCheckingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3E29A6031F2764460068D58F /* SqliCheckingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E29A6131F2764460068D58F /* Build configuration list for PBXNativeTarget "SqliCheckingUITests" */;
+			buildPhases = (
+				3E29A6001F2764460068D58F /* Sources */,
+				3E29A6011F2764460068D58F /* Frameworks */,
+				3E29A6021F2764460068D58F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3E29A6061F2764460068D58F /* PBXTargetDependency */,
+			);
+			name = SqliCheckingUITests;
+			productName = SqliCheckingUITests;
+			productReference = 3E29A6041F2764460068D58F /* SqliCheckingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3E29A5D81F2764450068D58F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Lina Ait Khouya";
+				TargetAttributes = {
+					3E29A5DF1F2764450068D58F = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					3E29A5F81F2764460068D58F = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3E29A5DF1F2764450068D58F;
+					};
+					3E29A6031F2764460068D58F = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3E29A5DF1F2764450068D58F;
+					};
+				};
+			};
+			buildConfigurationList = 3E29A5DB1F2764450068D58F /* Build configuration list for PBXProject "SqliChecking" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3E29A5D71F2764450068D58F;
+			productRefGroup = 3E29A5E11F2764450068D58F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3E29A5DF1F2764450068D58F /* SqliChecking */,
+				3E29A5F81F2764460068D58F /* SqliCheckingTests */,
+				3E29A6031F2764460068D58F /* SqliCheckingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3E29A5DE1F2764450068D58F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E29A5F31F2764450068D58F /* LaunchScreen.storyboard in Resources */,
+				3E29A5F01F2764450068D58F /* Assets.xcassets in Resources */,
+				3E29A5EE1F2764450068D58F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E29A5F71F2764460068D58F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E29A6021F2764460068D58F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3E29A5DC1F2764450068D58F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E29A5EB1F2764450068D58F /* ViewController.m in Sources */,
+				3E29A5E81F2764450068D58F /* AppDelegate.m in Sources */,
+				3E29A5E51F2764450068D58F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E29A5F51F2764460068D58F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E29A5FE1F2764460068D58F /* SqliCheckingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E29A6001F2764460068D58F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E29A6091F2764460068D58F /* SqliCheckingUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3E29A5FB1F2764460068D58F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E29A5DF1F2764450068D58F /* SqliChecking */;
+			targetProxy = 3E29A5FA1F2764460068D58F /* PBXContainerItemProxy */;
+		};
+		3E29A6061F2764460068D58F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E29A5DF1F2764450068D58F /* SqliChecking */;
+			targetProxy = 3E29A6051F2764460068D58F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3E29A5EC1F2764450068D58F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E29A5ED1F2764450068D58F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3E29A5F11F2764450068D58F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E29A5F21F2764450068D58F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3E29A60B1F2764460068D58F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3E29A60C1F2764460068D58F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3E29A60E1F2764460068D58F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SqliChecking/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sqli.SqliChecking;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3E29A60F1F2764460068D58F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SqliChecking/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sqli.SqliChecking;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3E29A6111F2764460068D58F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SqliCheckingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sqli.SqliCheckingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SqliChecking.app/SqliChecking";
+			};
+			name = Debug;
+		};
+		3E29A6121F2764460068D58F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SqliCheckingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sqli.SqliCheckingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SqliChecking.app/SqliChecking";
+			};
+			name = Release;
+		};
+		3E29A6141F2764460068D58F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SqliCheckingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sqli.SqliCheckingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SqliChecking;
+			};
+			name = Debug;
+		};
+		3E29A6151F2764460068D58F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SqliCheckingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Sqli.SqliCheckingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SqliChecking;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3E29A5DB1F2764450068D58F /* Build configuration list for PBXProject "SqliChecking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E29A60B1F2764460068D58F /* Debug */,
+				3E29A60C1F2764460068D58F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E29A60D1F2764460068D58F /* Build configuration list for PBXNativeTarget "SqliChecking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E29A60E1F2764460068D58F /* Debug */,
+				3E29A60F1F2764460068D58F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3E29A6101F2764460068D58F /* Build configuration list for PBXNativeTarget "SqliCheckingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E29A6111F2764460068D58F /* Debug */,
+				3E29A6121F2764460068D58F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3E29A6131F2764460068D58F /* Build configuration list for PBXNativeTarget "SqliCheckingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E29A6141F2764460068D58F /* Debug */,
+				3E29A6151F2764460068D58F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3E29A5D81F2764450068D58F /* Project object */;
+}
