@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UIViewController <UITableViewDataSource, UITextViewDelegate>{
+    NSDictionary* tab;
+    NSArray* semaine;
+    NSMutableDictionary* jours;
+    NSMutableDictionary* dureeTotal;
+    NSArray *jourSemaine;
+}
 
 @end
 
