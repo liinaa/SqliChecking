@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E1EDF811F2B3059003D3974 /* SqliChecking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E1EDF7F1F2B3059003D3974 /* SqliChecking.xcdatamodeld */; };
+		3E1EFAD91F31F82600C12499 /* sqliPresenceDB.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E1EFAD81F31F82600C12499 /* sqliPresenceDB.sql */; };
 		3E29A5E51F2764450068D58F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A5E41F2764450068D58F /* main.m */; };
 		3E29A5E81F2764450068D58F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A5E71F2764450068D58F /* AppDelegate.m */; };
 		3E29A5EB1F2764450068D58F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A5EA1F2764450068D58F /* ViewController.m */; };
@@ -17,6 +17,10 @@
 		3E29A6091F2764460068D58F /* SqliCheckingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A6081F2764460068D58F /* SqliCheckingUITests.m */; };
 		3E29A61A1F277F6E0068D58F /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E29A6191F277F6E0068D58F /* profile.png */; };
 		3E29A6231F27A4560068D58F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A6221F27A4560068D58F /* SecondViewController.m */; };
+		3E2C27991F2F550600355F9F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E2C27981F2F550600355F9F /* libsqlite3.tbd */; };
+		3E2C279C1F2F556100355F9F /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2C279B1F2F556100355F9F /* DBManager.m */; };
+		3E2C27DC1F2F875A00355F9F /* PopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2C27DA1F2F875A00355F9F /* PopUpViewController.m */; };
+		3E2E23281F3088200091F9E0 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E2E23271F3088200091F9E0 /* edit.png */; };
 		3E6CD8871F2A12DF00AB8CFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6CD8851F2A12DF00AB8CFD /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3E1EDF801F2B3059003D3974 /* SqliChecking.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SqliChecking.xcdatamodel; sourceTree = "<group>"; };
+		3E1EFAD81F31F82600C12499 /* sqliPresenceDB.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = sqliPresenceDB.sql; path = ../sqliPresenceDB.sql; sourceTree = "<group>"; };
 		3E29A5E01F2764450068D58F /* SqliChecking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SqliChecking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E29A5E41F2764450068D58F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E29A5E61F2764450068D58F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -57,6 +61,12 @@
 		3E29A6191F277F6E0068D58F /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		3E29A6211F27A4560068D58F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		3E29A6221F27A4560068D58F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		3E2C27981F2F550600355F9F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		3E2C279A1F2F556100355F9F /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		3E2C279B1F2F556100355F9F /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		3E2C27D91F2F875A00355F9F /* PopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpViewController.h; sourceTree = "<group>"; };
+		3E2C27DA1F2F875A00355F9F /* PopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpViewController.m; sourceTree = "<group>"; };
+		3E2E23271F3088200091F9E0 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		3E6CD8861F2A12DF00AB8CFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E2C27991F2F550600355F9F /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +103,7 @@
 				3E29A5FC1F2764460068D58F /* SqliCheckingTests */,
 				3E29A6071F2764460068D58F /* SqliCheckingUITests */,
 				3E29A5E11F2764450068D58F /* Products */,
+				3E2C27971F2F550600355F9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,14 +120,19 @@
 		3E29A5E21F2764450068D58F /* SqliChecking */ = {
 			isa = PBXGroup;
 			children = (
+				3E1EFAD81F31F82600C12499 /* sqliPresenceDB.sql */,
 				3E29A5E61F2764450068D58F /* AppDelegate.h */,
 				3E29A5E71F2764450068D58F /* AppDelegate.m */,
 				3E29A5E91F2764450068D58F /* ViewController.h */,
 				3E29A5EA1F2764450068D58F /* ViewController.m */,
 				3E29A6211F27A4560068D58F /* SecondViewController.h */,
 				3E29A6221F27A4560068D58F /* SecondViewController.m */,
-				3E1EDF7F1F2B3059003D3974 /* SqliChecking.xcdatamodeld */,
+				3E2C279A1F2F556100355F9F /* DBManager.h */,
+				3E2C279B1F2F556100355F9F /* DBManager.m */,
+				3E2C27D91F2F875A00355F9F /* PopUpViewController.h */,
+				3E2C27DA1F2F875A00355F9F /* PopUpViewController.m */,
 				3E29A6191F277F6E0068D58F /* profile.png */,
+				3E2E23271F3088200091F9E0 /* edit.png */,
 				3E6CD8851F2A12DF00AB8CFD /* Main.storyboard */,
 				3E29A5EF1F2764450068D58F /* Assets.xcassets */,
 				3E29A5F11F2764450068D58F /* LaunchScreen.storyboard */,
@@ -149,6 +166,14 @@
 				3E29A60A1F2764460068D58F /* Info.plist */,
 			);
 			path = SqliCheckingUITests;
+			sourceTree = "<group>";
+		};
+		3E2C27971F2F550600355F9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E2C27981F2F550600355F9F /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,9 +282,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E2E23281F3088200091F9E0 /* edit.png in Resources */,
 				3E29A5F31F2764450068D58F /* LaunchScreen.storyboard in Resources */,
 				3E29A5F01F2764450068D58F /* Assets.xcassets in Resources */,
 				3E29A61A1F277F6E0068D58F /* profile.png in Resources */,
+				3E1EFAD91F31F82600C12499 /* sqliPresenceDB.sql in Resources */,
 				3E6CD8871F2A12DF00AB8CFD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,11 +312,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E1EDF811F2B3059003D3974 /* SqliChecking.xcdatamodeld in Sources */,
 				3E29A6231F27A4560068D58F /* SecondViewController.m in Sources */,
 				3E29A5EB1F2764450068D58F /* ViewController.m in Sources */,
+				3E2C279C1F2F556100355F9F /* DBManager.m in Sources */,
 				3E29A5E81F2764450068D58F /* AppDelegate.m in Sources */,
 				3E29A5E51F2764450068D58F /* main.m in Sources */,
+				3E2C27DC1F2F875A00355F9F /* PopUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,19 +572,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		3E1EDF7F1F2B3059003D3974 /* SqliChecking.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3E1EDF801F2B3059003D3974 /* SqliChecking.xcdatamodel */,
-			);
-			currentVersion = 3E1EDF801F2B3059003D3974 /* SqliChecking.xcdatamodel */;
-			path = SqliChecking.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 3E29A5D81F2764450068D58F /* Project object */;
 }
