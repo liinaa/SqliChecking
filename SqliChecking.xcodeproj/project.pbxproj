@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E1EFAD91F31F82600C12499 /* sqliPresenceDB.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E1EFAD81F31F82600C12499 /* sqliPresenceDB.sql */; };
 		3E29A5E51F2764450068D58F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A5E41F2764450068D58F /* main.m */; };
 		3E29A5E81F2764450068D58F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A5E71F2764450068D58F /* AppDelegate.m */; };
 		3E29A5EB1F2764450068D58F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A5EA1F2764450068D58F /* ViewController.m */; };
@@ -21,6 +20,7 @@
 		3E2C279C1F2F556100355F9F /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2C279B1F2F556100355F9F /* DBManager.m */; };
 		3E2C27DC1F2F875A00355F9F /* PopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2C27DA1F2F875A00355F9F /* PopUpViewController.m */; };
 		3E2E23281F3088200091F9E0 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E2E23271F3088200091F9E0 /* edit.png */; };
+		3E2E98571F334F6200BFA0FE /* presenceDB.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E2E98561F334F6200BFA0FE /* presenceDB.sql */; };
 		3E6CD8871F2A12DF00AB8CFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6CD8851F2A12DF00AB8CFD /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3E1EFAD81F31F82600C12499 /* sqliPresenceDB.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = sqliPresenceDB.sql; path = ../sqliPresenceDB.sql; sourceTree = "<group>"; };
 		3E29A5E01F2764450068D58F /* SqliChecking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SqliChecking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E29A5E41F2764450068D58F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E29A5E61F2764450068D58F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		3E2C27D91F2F875A00355F9F /* PopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpViewController.h; sourceTree = "<group>"; };
 		3E2C27DA1F2F875A00355F9F /* PopUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpViewController.m; sourceTree = "<group>"; };
 		3E2E23271F3088200091F9E0 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
+		3E2E98561F334F6200BFA0FE /* presenceDB.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = presenceDB.sql; sourceTree = "<group>"; };
 		3E6CD8861F2A12DF00AB8CFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,7 +120,7 @@
 		3E29A5E21F2764450068D58F /* SqliChecking */ = {
 			isa = PBXGroup;
 			children = (
-				3E1EFAD81F31F82600C12499 /* sqliPresenceDB.sql */,
+				3E2E98561F334F6200BFA0FE /* presenceDB.sql */,
 				3E29A5E61F2764450068D58F /* AppDelegate.h */,
 				3E29A5E71F2764450068D58F /* AppDelegate.m */,
 				3E29A5E91F2764450068D58F /* ViewController.h */,
@@ -285,8 +285,8 @@
 				3E2E23281F3088200091F9E0 /* edit.png in Resources */,
 				3E29A5F31F2764450068D58F /* LaunchScreen.storyboard in Resources */,
 				3E29A5F01F2764450068D58F /* Assets.xcassets in Resources */,
+				3E2E98571F334F6200BFA0FE /* presenceDB.sql in Resources */,
 				3E29A61A1F277F6E0068D58F /* profile.png in Resources */,
-				3E1EFAD91F31F82600C12499 /* sqliPresenceDB.sql in Resources */,
 				3E6CD8871F2A12DF00AB8CFD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

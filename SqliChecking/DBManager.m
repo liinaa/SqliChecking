@@ -22,6 +22,7 @@
         
         // Copy the database file into the documents directory if necessary.
         [self copyDatabaseIntoDocumentsDirectory];
+        
     }
     return self;
 }
@@ -73,6 +74,10 @@
         // Load all data from database to memory.
         BOOL prepareStatementResult = sqlite3_prepare_v2(sqlite3Database, query, -1, &compiledStatement, NULL);
         if(prepareStatementResult == SQLITE_OK) {
+            if(_imgData != nil){
+                NSLog(@"saaaaaaa");
+            }
+                sqlite3_bind_blob(compiledStatement, 1, [_imgData bytes], [_imgData length], SQLITE_TRANSIENT);
             // Check if the query is non-executable.
             if (!queryExecutable){
                 // In this case data must be loaded from the database.
@@ -87,13 +92,12 @@
                     
                     // Get the total number of columns.
                     int totalColumns = sqlite3_column_count(compiledStatement);
-                    
                     // Go through all columns and fetch each column data.
-                    for (int i=0; i<totalColumns; i++){
+                    for (int i=0; i<totalColumns-1; i++){
                         // Convert the column data to text (characters).
                         char *dbDataAsChars = (char *)sqlite3_column_text(compiledStatement, i);
                         
-                        // If there are contents in the currenct column (field) then add them to the current row array.
+                        // If there are contents in the current column (field) then add them to the current row array.
                         if (dbDataAsChars != NULL) {
                             // Convert the characters to string.
                             [arrDataRow addObject:[NSString  stringWithUTF8String:dbDataAsChars]];
@@ -114,7 +118,6 @@
             }
             else {
                 // This is the case of an executable query (insert, update, ...).
-                
                 // Execute the query.
                 int executeQueryResults = sqlite3_step(compiledStatement);
                 if (executeQueryResults == SQLITE_DONE) {

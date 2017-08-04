@@ -9,8 +9,13 @@
 #import "SecondViewController.h"
 #import <Photos/Photos.h>
 #import "PopUpViewController.h"
+#import "DBManager.h"
 
 @interface SecondViewController ()
+@property (nonatomic, strong) DBManager *dbManager;
+//@property (nonatomic, strong) NSData *imgData;
+
+
 @end
 
 @implementation SecondViewController
@@ -26,7 +31,7 @@
     self.email.delegate = self;
     self.tel.delegate = self;
     // Initialize the dbManager object.
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"sqliPresenceDB.sql"];
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"presenceDB.sql"];
      [self loadData];
     
     if([self searchUser]){
@@ -38,7 +43,11 @@
         self.function.text = [arr objectAtIndex:3];
         self.email.text = [arr objectAtIndex:4];
         self.tel.text = [arr objectAtIndex:5];
-        
+        if([self userImage] == nil) {
+             self.imageView.image = [UIImage imageNamed:@"profile.png"];
+        }
+       // else
+            // self.imageView.image = [UIImage imageWithData:[self userImage]];
          self.firstName.userInteractionEnabled = NO;
          self.secondName.userInteractionEnabled = NO;
          self.function.userInteractionEnabled = NO;
@@ -62,6 +71,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void) imagePickerController: (UIImagePickerController *) picker
+ didFinishPickingMediaWithInfo: (NSDictionary *) info {
+    if(_photo == nil){
+        _photo = [info objectForKey:UIImagePickerControllerOriginalImage];
+    }
+    else     _photo = [info objectForKey:UIImagePickerControllerEditedImage];
+
+    NSData *imgData = UIImagePNGRepresentation(_photo);
+     NSURL *imageURL = [info valueForKey:UIImagePickerControllerReferenceURL];
+     NSString *myString = [imageURL absoluteString];
+    _dbManager.imgData = imgData;
+    self.imageView.image = _photo;
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
 
 - (IBAction)editPhotoClicked:(id)sender {
     PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
@@ -106,15 +130,6 @@
     self.tel.userInteractionEnabled = YES;
 }
 
-- (void) imagePickerController:(UIImagePickerController *)picker
-         didFinishPickingImage:(UIImage *)image
-                   editingInfo:(NSDictionary *)editingInfo
-{
-    self.imageView.image = image;
-    [self dismissModalViewControllerAnimated:YES];
-}
-
-
 - (IBAction)saveButtonClicked:(id)sender {
     [self validation];
     if([self validation])
@@ -123,11 +138,13 @@
         NSString *uniqueIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
         NSString *query;
         if(![self searchUser]){
-            query = [NSString stringWithFormat:@"insert into user values(\"%@\", \"%@\", \"%@\", \"%@\",\"%@\",\"%@\")", uniqueIdentifier, self.firstName.text, self.secondName.text,self.function.text,self.email.text,self.tel.text];
+            query = [NSString stringWithFormat:@"insert into user values(\"%@\", \"%@\", \"%@\", \"%@\",\"%@\",\"%@\",?)", uniqueIdentifier, self.firstName.text, self.secondName.text,self.function.text,self.email.text,self.tel.text];
         }
         else {
-            query = [NSString stringWithFormat:@"update user set firstName = \"%@\",lastName = \"%@\",function = \"%@\", email = \"%@\", tel = \"%@\" where IDUser = \"%@\" ", self.firstName.text, self.secondName.text,self.function.text,self.email.text,self.tel.text,uniqueIdentifier];
+            query = [NSString stringWithFormat:@"update user set firstName = \"%@\",lastName = \"%@\",function = \"%@\", email = \"%@\", tel = \"%@\", photo = ? where IDUser = \"%@\" ", self.firstName.text, self.secondName.text,self.function.text,self.email.text,self.tel.text,uniqueIdentifier];
         }
+        self.dbManager.imgData = UIImagePNGRepresentation(_imageView.image);
+
     // Execute the query.
     [self.dbManager executeQuery:query];
     
@@ -168,7 +185,7 @@
 
 - (BOOL) valideTel:(UITextField*)tel{
     NSString *temp = [self.tel.text stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSString *regx = @"^(\\+|(00)|0)[0-9]{6,14}$";
+    NSString *regx = @"^((\\+)|(00)|0)[0-9]{6,14}$";
     NSPredicate *telPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regx];
     if ([telPredicate evaluateWithObject:temp] == YES)
     {
@@ -216,7 +233,7 @@
 
 -(void)loadData{
     // Form the query.
-    NSString *query = @"select * from user ";
+    NSString *query = @"select * from user ;";
     
     // Get the results.
     if (self.arrPeopleInfo != nil) {
@@ -239,5 +256,18 @@
     else return false;
 }
 
+- (NSString*) userImage{
+      NSString *uniqueIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+     NSString *query = [[@"select photo from user where IDUser ='" stringByAppendingString:uniqueIdentifier] stringByAppendingString:@"' "];
+    NSArray *tab = [self.dbManager loadDataFromDB:query];
+        if(tab == nil || ![tab count]){
+            return nil;
+        }
+        else{
+            return [tab objectAtIndex:0];
+        }
+    
+
+}
 
 @end

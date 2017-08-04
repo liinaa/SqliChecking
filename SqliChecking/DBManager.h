@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
+#import "SecondViewController.h"
 
 @interface DBManager : NSObject
     @property (nonatomic, strong) NSString *documentsDirectory;
@@ -16,6 +17,8 @@
     @property (nonatomic, strong) NSMutableArray *arrColumnNames;
     @property (nonatomic) int affectedRows;
     @property (nonatomic) long long lastInsertedRowID;
+    @property (nonatomic, strong) NSData *imgData;
+
     -(instancetype)initWithDatabaseFilename:(NSString *)dbFilename;
     -(void)copyDatabaseIntoDocumentsDirectory;
     -(void)runQuery:(const char *)query isQueryExecutable:(BOOL)queryExecutable;

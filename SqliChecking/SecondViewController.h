@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-#import "DBManager.h"
 
 @interface SecondViewController : UIViewController <UINavigationControllerDelegate,
 UIImagePickerControllerDelegate>{
@@ -21,7 +20,7 @@ UIImagePickerControllerDelegate>{
 @property (strong, nonatomic) IBOutlet UITextField *email;
 @property (strong, nonatomic) IBOutlet UITextField *tel;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
-@property (nonatomic, strong) DBManager *dbManager;
+@property (strong, nonatomic) IBOutlet UIImage *photo;
 @property (strong, nonatomic) IBOutlet UILabel *firstNameError;
 @property (strong, nonatomic) IBOutlet UILabel *lastNameError;
 @property (strong, nonatomic) IBOutlet UILabel *functionError;
@@ -45,6 +44,8 @@ UIImagePickerControllerDelegate>{
 - (BOOL) validation;
 - (void) loadData;
 - (BOOL) searchUser;
+- (NSString*) userImage;
+
 
 
 @end
