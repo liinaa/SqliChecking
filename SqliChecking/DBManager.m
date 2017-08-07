@@ -74,10 +74,6 @@
         // Load all data from database to memory.
         BOOL prepareStatementResult = sqlite3_prepare_v2(sqlite3Database, query, -1, &compiledStatement, NULL);
         if(prepareStatementResult == SQLITE_OK) {
-            if(_imgData != nil){
-                NSLog(@"saaaaaaa");
-            }
-                sqlite3_bind_blob(compiledStatement, 1, [_imgData bytes], [_imgData length], SQLITE_TRANSIENT);
             // Check if the query is non-executable.
             if (!queryExecutable){
                 // In this case data must be loaded from the database.
@@ -93,7 +89,7 @@
                     // Get the total number of columns.
                     int totalColumns = sqlite3_column_count(compiledStatement);
                     // Go through all columns and fetch each column data.
-                    for (int i=0; i<totalColumns-1; i++){
+                    for (int i=0; i<totalColumns; i++){
                         // Convert the column data to text (characters).
                         char *dbDataAsChars = (char *)sqlite3_column_text(compiledStatement, i);
                         

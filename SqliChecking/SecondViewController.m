@@ -13,7 +13,7 @@
 
 @interface SecondViewController ()
 @property (nonatomic, strong) DBManager *dbManager;
-//@property (nonatomic, strong) NSData *imgData;
+@property (nonatomic, strong) NSString *imgData;
 
 
 @end
@@ -31,7 +31,7 @@
     self.email.delegate = self;
     self.tel.delegate = self;
     // Initialize the dbManager object.
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"presenceDB.sql"];
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"presDB.sql"];
      [self loadData];
     
     if([self searchUser]){
@@ -46,8 +46,23 @@
         if([self userImage] == nil) {
              self.imageView.image = [UIImage imageNamed:@"profile.png"];
         }
-       // else
-            // self.imageView.image = [UIImage imageWithData:[self userImage]];
+        else {
+            
+            NSURL *url = [NSURL fileURLWithPath:[self userImage]];
+            PHFetchResult *fetchResult = [PHAsset fetchAssetsWithALAssetURLs:@[url] options:nil];
+            PHAsset *asset = [fetchResult firstObject];
+            if (asset) {
+                // retrieve the image for the first result
+                PHImageManager *manager = [PHImageManager defaultManager];
+                [manager requestImageForAsset:asset
+                                   targetSize:PHImageManagerMaximumSize
+                                   contentMode:PHImageContentModeDefault
+                                   options:nil
+                                   resultHandler:^void(UIImage *image, NSDictionary *info) {
+                                        self.imageView.image = image;
+                                }];
+            }
+        }
          self.firstName.userInteractionEnabled = NO;
          self.secondName.userInteractionEnabled = NO;
          self.function.userInteractionEnabled = NO;
@@ -79,10 +94,8 @@
     }
     else     _photo = [info objectForKey:UIImagePickerControllerEditedImage];
 
-    NSData *imgData = UIImagePNGRepresentation(_photo);
      NSURL *imageURL = [info valueForKey:UIImagePickerControllerReferenceURL];
-     NSString *myString = [imageURL absoluteString];
-    _dbManager.imgData = imgData;
+     self.imgData = [imageURL absoluteString];
     self.imageView.image = _photo;
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
@@ -138,12 +151,13 @@
         NSString *uniqueIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
         NSString *query;
         if(![self searchUser]){
-            query = [NSString stringWithFormat:@"insert into user values(\"%@\", \"%@\", \"%@\", \"%@\",\"%@\",\"%@\",?)", uniqueIdentifier, self.firstName.text, self.secondName.text,self.function.text,self.email.text,self.tel.text];
+            query = [NSString stringWithFormat:@"insert into user values(\"%@\", \"%@\", \"%@\", \"%@\",\"%@\",\"%@\",\"%@\")", uniqueIdentifier, self.firstName.text, self.secondName.text,self.function.text,self.email.text,self.tel.text,self.imgData];
+            NSLog(@"%@",self.imgData);
         }
         else {
-            query = [NSString stringWithFormat:@"update user set firstName = \"%@\",lastName = \"%@\",function = \"%@\", email = \"%@\", tel = \"%@\", photo = ? where IDUser = \"%@\" ", self.firstName.text, self.secondName.text,self.function.text,self.email.text,self.tel.text,uniqueIdentifier];
+            query = [NSString stringWithFormat:@"update user set firstName = \"%@\",lastName = \"%@\",function = \"%@\", email = \"%@\", tel = \"%@\", photo = \"%@\" where IDUser = \"%@\" ", self.firstName.text, self.secondName.text,self.function.text,self.email.text,self.tel.text,self.imgData,uniqueIdentifier];
+            NSLog(@"%@",self.imgData);
         }
-        self.dbManager.imgData = UIImagePNGRepresentation(_imageView.image);
 
     // Execute the query.
     [self.dbManager executeQuery:query];
@@ -264,7 +278,7 @@
             return nil;
         }
         else{
-            return [tab objectAtIndex:0];
+            return [[tab objectAtIndex:0] objectAtIndex:0];
         }
     
 

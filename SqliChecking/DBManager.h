@@ -17,7 +17,6 @@
     @property (nonatomic, strong) NSMutableArray *arrColumnNames;
     @property (nonatomic) int affectedRows;
     @property (nonatomic) long long lastInsertedRowID;
-    @property (nonatomic, strong) NSData *imgData;
 
     -(instancetype)initWithDatabaseFilename:(NSString *)dbFilename;
     -(void)copyDatabaseIntoDocumentsDirectory;
