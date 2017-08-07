@@ -36,5 +36,7 @@
 	</array>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>The app needs to open the gallery</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string></string>
 </dict>
 </plist>
