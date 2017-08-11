@@ -7,13 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
+#import <OrangeBLE/OrangeBeacon.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, OrangeBeaconDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+//BeaconTag
+@property (strong, nonatomic) NSDictionary *launchOptions;
+@property(nonatomic, strong) CLLocationManager *locationManager;
+@property(nonatomic, strong) CLBeaconRegion *region;
 
-
++ (AppDelegate *)sharedAppDelegate;
+- (BOOL) getAutoAlert;
+- (void) setAutoAlert:(BOOL) bAutoAlert;
+- (BOOL) getStarted;
+- (void) stopOBLE;
+- (void) startOBLE;
+- (BOOL) verifyStartOBLE;
 
 
 @end

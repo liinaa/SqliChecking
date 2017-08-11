@@ -22,7 +22,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     valide = true;
     // Make self the delegate of the textfields.
     self.firstName.delegate = self;
@@ -30,6 +29,7 @@
     self.function.delegate = self;
     self.email.delegate = self;
     self.tel.delegate = self;
+    
     // Initialize the dbManager object.
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"presDB.sql"];
      [self loadData];
@@ -61,7 +61,8 @@
                                    resultHandler:^void(UIImage *image, NSDictionary *info) {
                                         self.imageView.image = image;
                                 }];
-            }
+            
+                        }
         }
          self.firstName.userInteractionEnabled = NO;
          self.secondName.userInteractionEnabled = NO;
@@ -87,6 +88,12 @@
 }
 */
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [[self view] endEditing:TRUE];
+    
+}
+
 - (void) imagePickerController: (UIImagePickerController *) picker
  didFinishPickingMediaWithInfo: (NSDictionary *) info {
     if(_photo == nil){
@@ -104,7 +111,18 @@
     PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
     if(status == PHAuthorizationStatusNotDetermined) {
         // Request photo authorization
-       
+        [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+            if (status == PHAuthorizationStatusAuthorized){
+            UIImagePickerController *pickerController = [[UIImagePickerController alloc]
+                                                         init];
+            pickerController.delegate = self;
+            pickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
+                [self presentViewController:pickerController animated:YES completion:nil];}
+            else {
+                NSLog(@"denied");
+            }
+        }];
+
     } else if (status == PHAuthorizationStatusAuthorized) {
         NSLog(@"authorized");
         [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {

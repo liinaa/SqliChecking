@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16D73B4129849DDA8E62DBB6 /* libPods-SqliCheckingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D347276C1AF4CE838D99CC /* libPods-SqliCheckingTests.a */; };
+		2CE76DD2630C8027F8162B23 /* libPods-SqliCheckingUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 202860CCB54163ECE438C8DF /* libPods-SqliCheckingUITests.a */; };
 		3E29A5E51F2764450068D58F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A5E41F2764450068D58F /* main.m */; };
 		3E29A5E81F2764450068D58F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A5E71F2764450068D58F /* AppDelegate.m */; };
 		3E29A5EB1F2764450068D58F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A5EA1F2764450068D58F /* ViewController.m */; };
@@ -16,7 +18,6 @@
 		3E29A6091F2764460068D58F /* SqliCheckingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A6081F2764460068D58F /* SqliCheckingUITests.m */; };
 		3E29A61A1F277F6E0068D58F /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E29A6191F277F6E0068D58F /* profile.png */; };
 		3E29A6231F27A4560068D58F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A6221F27A4560068D58F /* SecondViewController.m */; };
-		3E2C27991F2F550600355F9F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E2C27981F2F550600355F9F /* libsqlite3.tbd */; };
 		3E2C279C1F2F556100355F9F /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2C279B1F2F556100355F9F /* DBManager.m */; };
 		3E2C27DC1F2F875A00355F9F /* PopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2C27DA1F2F875A00355F9F /* PopUpViewController.m */; };
 		3E2E23281F3088200091F9E0 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E2E23271F3088200091F9E0 /* edit.png */; };
@@ -27,8 +28,11 @@
 		3E36C3011F387582000D3B8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E36C3001F387581000D3B8B /* Foundation.framework */; };
 		3E36C3031F38758A000D3B8B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E36C3021F38758A000D3B8B /* MobileCoreServices.framework */; };
 		3E36C3051F387593000D3B8B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E36C3041F387593000D3B8B /* UIKit.framework */; };
+		3E36C3071F387DEC000D3B8B /* OrangeBLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E36C3061F387DEC000D3B8B /* OrangeBLE.framework */; };
+		3E36C3111F38C630000D3B8B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E36C3101F38C630000D3B8B /* libsqlite3.tbd */; };
 		3E4DE97D1F34AA73002A4F75 /* presDB.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E4DE97C1F34AA73002A4F75 /* presDB.sql */; };
 		3E6CD8871F2A12DF00AB8CFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6CD8851F2A12DF00AB8CFD /* Main.storyboard */; };
+		A2084A68FD5E3CA201D24207 /* libPods-SqliChecking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3582B4A1B3C28F82A7CE97A7 /* libPods-SqliChecking.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B72A240E8DEB536F8B3AB29 /* Pods-SqliCheckingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SqliCheckingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SqliCheckingTests/Pods-SqliCheckingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		202860CCB54163ECE438C8DF /* libPods-SqliCheckingUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SqliCheckingUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22D347276C1AF4CE838D99CC /* libPods-SqliCheckingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SqliCheckingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3582B4A1B3C28F82A7CE97A7 /* libPods-SqliChecking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SqliChecking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E29A5E01F2764450068D58F /* SqliChecking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SqliChecking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E29A5E41F2764450068D58F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E29A5E61F2764450068D58F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,7 +75,6 @@
 		3E29A6191F277F6E0068D58F /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		3E29A6211F27A4560068D58F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		3E29A6221F27A4560068D58F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		3E2C27981F2F550600355F9F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		3E2C279A1F2F556100355F9F /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		3E2C279B1F2F556100355F9F /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		3E2C27D91F2F875A00355F9F /* PopUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpViewController.h; sourceTree = "<group>"; };
@@ -80,8 +87,15 @@
 		3E36C3001F387581000D3B8B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3E36C3021F38758A000D3B8B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3E36C3041F387593000D3B8B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3E36C3061F387DEC000D3B8B /* OrangeBLE.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OrangeBLE.framework; sourceTree = "<group>"; };
+		3E36C3101F38C630000D3B8B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		3E4DE97C1F34AA73002A4F75 /* presDB.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = presDB.sql; sourceTree = "<group>"; };
 		3E6CD8861F2A12DF00AB8CFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		41334ED1ECE9A77B456D0E7F /* Pods-SqliCheckingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SqliCheckingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SqliCheckingUITests/Pods-SqliCheckingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4EAFB5090E3C7C581E725808 /* Pods-SqliChecking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SqliChecking.release.xcconfig"; path = "Pods/Target Support Files/Pods-SqliChecking/Pods-SqliChecking.release.xcconfig"; sourceTree = "<group>"; };
+		C533D33DEEDA85AC30AE185B /* Pods-SqliCheckingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SqliCheckingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SqliCheckingUITests/Pods-SqliCheckingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CFCBBAD50970F061CB9CA930 /* Pods-SqliChecking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SqliChecking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SqliChecking/Pods-SqliChecking.debug.xcconfig"; sourceTree = "<group>"; };
+		F60E884B14629F72E704790E /* Pods-SqliCheckingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SqliCheckingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SqliCheckingTests/Pods-SqliCheckingTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,14 +103,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E36C3111F38C630000D3B8B /* libsqlite3.tbd in Frameworks */,
 				3E36C3051F387593000D3B8B /* UIKit.framework in Frameworks */,
 				3E36C3031F38758A000D3B8B /* MobileCoreServices.framework in Frameworks */,
 				3E36C3011F387582000D3B8B /* Foundation.framework in Frameworks */,
 				3E36C2FF1F387575000D3B8B /* CoreLocation.framework in Frameworks */,
 				3E36C2FD1F38756B000D3B8B /* CoreGraphics.framework in Frameworks */,
 				3E36C2FB1F387562000D3B8B /* SystemConfiguration.framework in Frameworks */,
+				3E36C3071F387DEC000D3B8B /* OrangeBLE.framework in Frameworks */,
 				3E36C2F91F387558000D3B8B /* CoreTelephony.framework in Frameworks */,
-				3E2C27991F2F550600355F9F /* libsqlite3.tbd in Frameworks */,
+				A2084A68FD5E3CA201D24207 /* libPods-SqliChecking.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16D73B4129849DDA8E62DBB6 /* libPods-SqliCheckingTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,12 +128,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE76DD2630C8027F8162B23 /* libPods-SqliCheckingUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FD3DF923280405E51539884 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFCBBAD50970F061CB9CA930 /* Pods-SqliChecking.debug.xcconfig */,
+				4EAFB5090E3C7C581E725808 /* Pods-SqliChecking.release.xcconfig */,
+				0B72A240E8DEB536F8B3AB29 /* Pods-SqliCheckingTests.debug.xcconfig */,
+				F60E884B14629F72E704790E /* Pods-SqliCheckingTests.release.xcconfig */,
+				41334ED1ECE9A77B456D0E7F /* Pods-SqliCheckingUITests.debug.xcconfig */,
+				C533D33DEEDA85AC30AE185B /* Pods-SqliCheckingUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3E29A5D71F2764450068D58F = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +156,7 @@
 				3E29A6071F2764460068D58F /* SqliCheckingUITests */,
 				3E29A5E11F2764450068D58F /* Products */,
 				3E2C27971F2F550600355F9F /* Frameworks */,
+				1FD3DF923280405E51539884 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,6 +224,8 @@
 		3E2C27971F2F550600355F9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E36C3101F38C630000D3B8B /* libsqlite3.tbd */,
+				3E36C3061F387DEC000D3B8B /* OrangeBLE.framework */,
 				3E36C3041F387593000D3B8B /* UIKit.framework */,
 				3E36C3021F38758A000D3B8B /* MobileCoreServices.framework */,
 				3E36C3001F387581000D3B8B /* Foundation.framework */,
@@ -199,7 +233,9 @@
 				3E36C2FC1F38756B000D3B8B /* CoreGraphics.framework */,
 				3E36C2FA1F387562000D3B8B /* SystemConfiguration.framework */,
 				3E36C2F81F387558000D3B8B /* CoreTelephony.framework */,
-				3E2C27981F2F550600355F9F /* libsqlite3.tbd */,
+				3582B4A1B3C28F82A7CE97A7 /* libPods-SqliChecking.a */,
+				22D347276C1AF4CE838D99CC /* libPods-SqliCheckingTests.a */,
+				202860CCB54163ECE438C8DF /* libPods-SqliCheckingUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -211,9 +247,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E29A60D1F2764460068D58F /* Build configuration list for PBXNativeTarget "SqliChecking" */;
 			buildPhases = (
+				4CE3EF81559254A3BE3E3437 /* [CP] Check Pods Manifest.lock */,
 				3E29A5DC1F2764450068D58F /* Sources */,
 				3E29A5DD1F2764450068D58F /* Frameworks */,
 				3E29A5DE1F2764450068D58F /* Resources */,
+				2EF811F265944810FB9D3386 /* [CP] Embed Pods Frameworks */,
+				328902BC42407FF1EC18DBB4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,9 +267,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E29A6101F2764460068D58F /* Build configuration list for PBXNativeTarget "SqliCheckingTests" */;
 			buildPhases = (
+				57ACE3DC228CE4941ED30859 /* [CP] Check Pods Manifest.lock */,
 				3E29A5F51F2764460068D58F /* Sources */,
 				3E29A5F61F2764460068D58F /* Frameworks */,
 				3E29A5F71F2764460068D58F /* Resources */,
+				E2F24668648BE6F0480182C1 /* [CP] Embed Pods Frameworks */,
+				2385989DE2204141F8B8A2CB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,9 +288,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E29A6131F2764460068D58F /* Build configuration list for PBXNativeTarget "SqliCheckingUITests" */;
 			buildPhases = (
+				259C1AA25FCDE323897547B4 /* [CP] Check Pods Manifest.lock */,
 				3E29A6001F2764460068D58F /* Sources */,
 				3E29A6011F2764460068D58F /* Frameworks */,
 				3E29A6021F2764460068D58F /* Resources */,
+				84F14759F6978B19B5B09747 /* [CP] Embed Pods Frameworks */,
+				52AF61BCF13C78C457D39177 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,15 +316,26 @@
 				TargetAttributes = {
 					3E29A5DF1F2764450068D58F = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = KX79BU5A78;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					3E29A5F81F2764460068D58F = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = KX79BU5A78;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 3E29A5DF1F2764450068D58F;
 					};
 					3E29A6031F2764460068D58F = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = KX79BU5A78;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 3E29A5DF1F2764450068D58F;
 					};
@@ -334,6 +390,153 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2385989DE2204141F8B8A2CB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SqliCheckingTests/Pods-SqliCheckingTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		259C1AA25FCDE323897547B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SqliCheckingUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EF811F265944810FB9D3386 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SqliChecking/Pods-SqliChecking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		328902BC42407FF1EC18DBB4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SqliChecking/Pods-SqliChecking-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4CE3EF81559254A3BE3E3437 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SqliChecking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52AF61BCF13C78C457D39177 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SqliCheckingUITests/Pods-SqliCheckingUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57ACE3DC228CE4941ED30859 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SqliCheckingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84F14759F6978B19B5B09747 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SqliCheckingUITests/Pods-SqliCheckingUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2F24668648BE6F0480182C1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SqliCheckingTests/Pods-SqliCheckingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3E29A5DC1F2764450068D58F /* Sources */ = {
@@ -424,6 +627,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = KX79BU5A78;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -471,6 +675,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = KX79BU5A78;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -490,32 +695,50 @@
 		};
 		3E29A60E1F2764460068D58F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFCBBAD50970F061CB9CA930 /* Pods-SqliChecking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KX79BU5A78;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SqliChecking/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Sqli.SqliChecking;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sqli.sqlichecking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		3E29A60F1F2764460068D58F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EAFB5090E3C7C581E725808 /* Pods-SqliChecking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KX79BU5A78;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SqliChecking/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Sqli.SqliChecking;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sqli.sqlichecking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		3E29A6111F2764460068D58F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B72A240E8DEB536F8B3AB29 /* Pods-SqliCheckingTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SqliCheckingTests/Info.plist;
@@ -528,6 +751,7 @@
 		};
 		3E29A6121F2764460068D58F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F60E884B14629F72E704790E /* Pods-SqliCheckingTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SqliCheckingTests/Info.plist;
@@ -540,6 +764,7 @@
 		};
 		3E29A6141F2764460068D58F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41334ED1ECE9A77B456D0E7F /* Pods-SqliCheckingUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = SqliCheckingUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -551,6 +776,7 @@
 		};
 		3E29A6151F2764460068D58F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C533D33DEEDA85AC30AE185B /* Pods-SqliCheckingUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = SqliCheckingUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

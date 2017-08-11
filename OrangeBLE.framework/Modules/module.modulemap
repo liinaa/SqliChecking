@@ -1,0 +1,10 @@
+framework module OrangeBLE {
+	umbrella header "OrangeBLE.h"
+	
+	header "OrangeBeacon.h"
+	header "OBConfig.h"
+	header "OBLEBeaconIdentifier.h"
+	
+	export *
+	module * { export * }
+}

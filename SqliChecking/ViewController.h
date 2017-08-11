@@ -14,7 +14,19 @@
     NSMutableDictionary* jours;
     NSMutableDictionary* dureeTotal;
     NSArray *jourSemaine;
+    NSMutableArray* lundis;
 }
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *controlAutoAlert;
+@property (weak, nonatomic) IBOutlet UIButton *stopBtn;
+@property (weak, nonatomic) IBOutlet UIButton *startBtn;
+
+- (NSDate*) getMondaysDate:(NSDate*)dateX;
+- (IBAction)stopOBLE:(id)sender;
+- (IBAction)startOBLE:(id)sender;
+- (void) verifyStartOBLE;
+- (IBAction)handleAutoAlerte:(id)sender;
+- (NSString*) userWorkTime;
 
 @end
 
