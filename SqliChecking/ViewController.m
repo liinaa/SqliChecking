@@ -26,10 +26,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"preDB.sql"];
     NSDate *dateX;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd MMMM yyyy"];
+    NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    [formatter setLocale:usLocale];
     NSString *previousMonday = [formatter stringFromDate:[self getMondaysDate:dateX]];
     NSLog(@"previousMonday date ===> : %@",previousMonday);
     
@@ -42,33 +44,53 @@
     for (NSDate* d in self->lundis) {
         NSLog(@"%@", [formatter stringFromDate:d]);
     }
-
-    jourSemaine=@[@"Monday",@"Tuesday",@"Wednesday",@"Thursday",@"Friday",@"Saturday",@"Sunday"];
-    tab = @{ [@"Week of " stringByAppendingString:[formatter stringFromDate:[lundis objectAtIndex:0]] ] : @{@"Monday":@"7",@"Tuesday":@"8",@"Wednesday":@"7",@"Thursday":@"8"},
-             [@"Week of " stringByAppendingString:[formatter stringFromDate:[lundis objectAtIndex:1]] ] : @{@"Monday":@"7",@"Tuesday":@"7",@"Wednesday":@"7",@"Thursday":@"7",@"Friday":@"7",@"Saturday":@"8",@"Sunday":@"7"},
-             [@"Week of " stringByAppendingString:[formatter stringFromDate:[lundis objectAtIndex:2]] ] : @{@"Monday":@"7",@"Tuesday":@"8",@"Wednesday":@"7",@"Thursday":@"8",@"Friday":@"7",@"Saturday":@"8",@"Sunday":@"8"},
-             [@"Week of " stringByAppendingString:[formatter stringFromDate:[lundis objectAtIndex:3]] ] : @{@"Monday":@"7",@"Tuesday":@"7",@"Wednesday":@"7",@"Thursday":@"7",@"Friday":@"7",@"Saturday":@"8",@"Sunday":@"7"}
-             };
-
+    
+    NSMutableArray *arrOfDict = [[NSMutableArray alloc]init] ;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    
+    for (int i=0;i<lundis.count;i++) {
+        NSString *d1 = [dateFormatter stringFromDate:[lundis objectAtIndex:i]];
+        NSDate *d2;
+        if(i!=0)
+        d2 = [lundis objectAtIndex:i-1];
+        else  d2 = [NSDate date];
+        NSLog(@"entre le %@ et le %@ ",d1,d2);
+        BOOL temp = true;
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc]init] ;
+        for (NSArray* sarr in [self userWorkTime:d1 until:[dateFormatter stringFromDate:[d2 dateByAddingTimeInterval:-24*60*60]]]) {
+            [dict setObject:[sarr objectAtIndex:1] forKey:[sarr objectAtIndex:0]];
+            temp = false;
+            NSLog(@"%@",[sarr objectAtIndex:0]);
+            NSLog(@"%@",[sarr objectAtIndex:1]);
+        }
+        if(!temp)
+            [arrOfDict addObject:dict];
+       // NSLog(@"arrofDict %@",arrOfDict);
+    }
+    
+    NSMutableDictionary* tab1 = [[NSMutableDictionary alloc]init];
+    for(int j=0;j<arrOfDict.count;j++){
+        [tab1 setObject:[arrOfDict objectAtIndex:j] forKey:[formatter stringFromDate:[lundis objectAtIndex:j]]];
+    }
+    NSLog(@"%@",tab1);
+    tab = tab1;
+    
     semaine = [[tab allKeys] sortedArrayUsingComparator:^(NSString* s1, NSString* s2){
-        NSArray *arr1 = [s1 componentsSeparatedByString:@"of"];
-        NSArray *arr2 = [s2 componentsSeparatedByString:@"of"];
-        if([[formatter dateFromString:[arr1 objectAtIndex:1]] compare:[formatter dateFromString:[arr2 objectAtIndex:1]]] == NSOrderedAscending){
+        if([[formatter dateFromString:s1] compare:[formatter dateFromString:s2]] == NSOrderedAscending){
             return NSOrderedDescending;
         }
         else return NSOrderedAscending;
     }];
-    
     jours = [[NSMutableDictionary alloc]init];
     dureeTotal = [[NSMutableDictionary alloc]init];
     
     [tab enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        [jours setValue:[[obj allKeys] sortedArrayUsingComparator: ^(NSString* j1, NSString* j2) {
-            if( [jourSemaine indexOfObject:j1] < [jourSemaine indexOfObject:j2])
-                return NSOrderedAscending;
-            else return NSOrderedDescending;
+       [jours setValue:[[obj allKeys] sortedArrayUsingComparator: ^(NSDate* j1, NSDate* j2) {
+            if( [j1 compare:j2] == NSOrderedAscending)
+                return NSOrderedDescending;
+            else return NSOrderedAscending;
         }] forKey:key];
-        NSLog(@"%@",[jours objectForKey:key]);
         }];
    [tab enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
        
@@ -108,15 +130,14 @@
 - (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     NSString *sectionTitle = [semaine objectAtIndex:section];
     NSString *dt = [dureeTotal objectForKey:sectionTitle];
-    return [[semaine objectAtIndex:section] stringByAppendingString:[NSString stringWithFormat:@"                 %@ h",dt]];
+  /*  NSDateFormatter *dureeFormatter = [[NSDateFormatter alloc] init];
+    [dureeFormatter setDateFormat:@"HH:mm"];
+    NSDateFormatter *dureeFormatter1 = [[NSDateFormatter alloc] init];
+    [dureeFormatter1 setDateFormat:@"HH"];
+    dt = [dureeFormatter stringFromDate:[dureeFormatter1 dateFromString:dt]];*/
+    //HH'h' mm'm'
+    return [[semaine objectAtIndex:section] stringByAppendingString:[NSString stringWithFormat:@"                            %@ h",dt]];
 }
-
-/*- (NSString*) tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
-    NSString *sectionTitle = [semaine objectAtIndex:section];
-    NSString *dt = [dureeTotal objectForKey:sectionTitle];
-    NSString *result = [NSString stringWithFormat:@"Nombre d'heures total               %@",dt];
-    return result;
-}*/
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -133,12 +154,21 @@
     NSString *jourAffich = [[jours objectForKey:sectionTitle] objectAtIndex:indexPath.row];
     NSString *duree = [[tab objectForKey:sectionTitle] objectForKey:jourAffich];
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"dd"];
-
-    NSDate* vari = [[lundis objectAtIndex:indexPath.section] dateByAddingTimeInterval:24*60*60*indexPath.row];
-    cell.textLabel.text = [[jourAffich stringByAppendingString:@" "] stringByAppendingString:[formatter stringFromDate:vari]];
+    NSDateFormatter *dureeFormatter = [[NSDateFormatter alloc] init];
+    [dureeFormatter setDateFormat:@"HH:mm"];
+    NSDateFormatter *dureeFormatter1 = [[NSDateFormatter alloc] init];
+    [dureeFormatter1 setDateFormat:@"HH"];
+    duree = [dureeFormatter stringFromDate:[dureeFormatter1 dateFromString:duree]];
     
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    
+    NSDateFormatter *formatterOther = [[NSDateFormatter alloc] init];
+    [formatterOther setDateFormat:@"EEEE dd MMMM"];
+    NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    [formatterOther setLocale:usLocale];
+    
+    cell.textLabel.text =  [formatterOther stringFromDate:[formatter dateFromString:jourAffich]] ;
     cell.detailTextLabel.text = duree;
     return cell;
 }
@@ -200,20 +230,18 @@
     }
 }
 
-/*- (NSString*) userWorkTime{
+- (NSArray*) userWorkTime:(NSString*)start until:(NSString*)end{
     NSString *uniqueIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-    NSString *query = [[@"select hours from workTime where userID ='" stringByAppendingString:uniqueIdentifier] stringByAppendingString:@"' AND date = '07 août 2017' "];
-    NSArray *tab = [self.dbManager loadDataFromDB:query];
-    if(tab == nil || ![tab count]){
+    NSString *query = [[[[[[@"select date, hours from workTime where date BETWEEN '" stringByAppendingString:start] stringByAppendingString:@"' AND '"] stringByAppendingString:end ] stringByAppendingString:@"' AND userID ='" ] stringByAppendingString:uniqueIdentifier] stringByAppendingString:@"' "];
+    NSArray *tabl = [self.dbManager loadDataFromDB:query];
+    if(tabl == nil || ![tabl count]){
         return nil;
     }
     else{
-        NSLog(@"jfkshfjhsk %@",[[tab objectAtIndex:0] objectAtIndex:0]);
-        return [[tab objectAtIndex:0] objectAtIndex:0];
+        return tabl;
     }
-    
-    
-}*/
+}
+
 
 
 @end

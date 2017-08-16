@@ -31,7 +31,7 @@
     self.tel.delegate = self;
     
     // Initialize the dbManager object.
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"presDB.sql"];
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"preDB.sql"];
      [self loadData];
     
     if([self searchUser]){
@@ -143,25 +143,32 @@
 
 - (IBAction)firstNameEdit:(id)sender {
     self.firstName.userInteractionEnabled = YES;
+    [self.firstName becomeFirstResponder];
+
 }
 
 - (IBAction)lastNameEdit:(id)sender {
     self.secondName.userInteractionEnabled = YES;
+    [self.secondName becomeFirstResponder];
 }
 
 - (IBAction)functionEdit:(id)sender {
     self.function.userInteractionEnabled = YES;
+    [self.function becomeFirstResponder];
 }
 
 - (IBAction)emailEdit:(id)sender {
     self.email.userInteractionEnabled = YES;
+    [self.email becomeFirstResponder];
 }
 
 - (IBAction)telEdit:(id)sender {
     self.tel.userInteractionEnabled = YES;
+    [self.tel becomeFirstResponder];
 }
 
 - (IBAction)saveButtonClicked:(id)sender {
+    valide = true;
     [self validation];
     if([self validation])
     {
@@ -288,6 +295,25 @@
     else return false;
 }
 
+- (IBAction)cameraClicked:(id)sender {
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
+        imagePicker.delegate = self;
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        imagePicker.allowsEditing = YES;
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Camera Unavailable"
+                                                       message:@"Unable to find a camera on your device."
+                                                      delegate:nil
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles:nil, nil];
+        [alert show];
+        alert = nil;
+    }
+}
+
 - (NSString*) userImage{
       NSString *uniqueIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
      NSString *query = [[@"select photo from user where IDUser ='" stringByAppendingString:uniqueIdentifier] stringByAppendingString:@"' "];
@@ -301,5 +327,13 @@
     
 
 }
+
+- (void) saveImageCam{
+    NSData* imageData = UIImageJPEGRepresentation(self.imageView.image,0.6);
+    UIImage* compressedImage = [UIImage imageWithData:imageData];
+   UIImageWriteToSavedPhotosAlbum(compressedImage, self, nil, nil);
+}
+
+
 
 @end

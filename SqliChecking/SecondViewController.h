@@ -44,8 +44,9 @@ UIImagePickerControllerDelegate>{
 - (BOOL) validation;
 - (void) loadData;
 - (BOOL) searchUser;
+- (IBAction)cameraClicked:(id)sender;
 - (NSString*) userImage;
-
+- (void) saveImageCam;
 
 
 @end

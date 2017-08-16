@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		16D73B4129849DDA8E62DBB6 /* libPods-SqliCheckingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D347276C1AF4CE838D99CC /* libPods-SqliCheckingTests.a */; };
 		2CE76DD2630C8027F8162B23 /* libPods-SqliCheckingUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 202860CCB54163ECE438C8DF /* libPods-SqliCheckingUITests.a */; };
+		3E0F608F1F41D31A004127CD /* cam.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E0F608E1F41D31A004127CD /* cam.png */; };
+		3E0F60911F431058004127CD /* preDB.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E0F60901F431058004127CD /* preDB.sql */; };
 		3E29A5E51F2764450068D58F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A5E41F2764450068D58F /* main.m */; };
 		3E29A5E81F2764450068D58F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A5E71F2764450068D58F /* AppDelegate.m */; };
 		3E29A5EB1F2764450068D58F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29A5EA1F2764450068D58F /* ViewController.m */; };
@@ -30,7 +32,6 @@
 		3E36C3051F387593000D3B8B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E36C3041F387593000D3B8B /* UIKit.framework */; };
 		3E36C3071F387DEC000D3B8B /* OrangeBLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E36C3061F387DEC000D3B8B /* OrangeBLE.framework */; };
 		3E36C3111F38C630000D3B8B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E36C3101F38C630000D3B8B /* libsqlite3.tbd */; };
-		3E4DE97D1F34AA73002A4F75 /* presDB.sql in Resources */ = {isa = PBXBuildFile; fileRef = 3E4DE97C1F34AA73002A4F75 /* presDB.sql */; };
 		3E6CD8871F2A12DF00AB8CFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6CD8851F2A12DF00AB8CFD /* Main.storyboard */; };
 		A2084A68FD5E3CA201D24207 /* libPods-SqliChecking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3582B4A1B3C28F82A7CE97A7 /* libPods-SqliChecking.a */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,8 @@
 		202860CCB54163ECE438C8DF /* libPods-SqliCheckingUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SqliCheckingUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D347276C1AF4CE838D99CC /* libPods-SqliCheckingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SqliCheckingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3582B4A1B3C28F82A7CE97A7 /* libPods-SqliChecking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SqliChecking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E0F608E1F41D31A004127CD /* cam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cam.png; sourceTree = "<group>"; };
+		3E0F60901F431058004127CD /* preDB.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = preDB.sql; sourceTree = "<group>"; };
 		3E29A5E01F2764450068D58F /* SqliChecking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SqliChecking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E29A5E41F2764450068D58F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E29A5E61F2764450068D58F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,7 +92,6 @@
 		3E36C3041F387593000D3B8B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3E36C3061F387DEC000D3B8B /* OrangeBLE.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OrangeBLE.framework; sourceTree = "<group>"; };
 		3E36C3101F38C630000D3B8B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		3E4DE97C1F34AA73002A4F75 /* presDB.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = presDB.sql; sourceTree = "<group>"; };
 		3E6CD8861F2A12DF00AB8CFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		41334ED1ECE9A77B456D0E7F /* Pods-SqliCheckingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SqliCheckingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SqliCheckingUITests/Pods-SqliCheckingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4EAFB5090E3C7C581E725808 /* Pods-SqliChecking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SqliChecking.release.xcconfig"; path = "Pods/Target Support Files/Pods-SqliChecking/Pods-SqliChecking.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,7 +175,7 @@
 		3E29A5E21F2764450068D58F /* SqliChecking */ = {
 			isa = PBXGroup;
 			children = (
-				3E4DE97C1F34AA73002A4F75 /* presDB.sql */,
+				3E0F60901F431058004127CD /* preDB.sql */,
 				3E29A5E61F2764450068D58F /* AppDelegate.h */,
 				3E29A5E71F2764450068D58F /* AppDelegate.m */,
 				3E29A5E91F2764450068D58F /* ViewController.h */,
@@ -184,6 +186,7 @@
 				3E2C279B1F2F556100355F9F /* DBManager.m */,
 				3E2C27D91F2F875A00355F9F /* PopUpViewController.h */,
 				3E2C27DA1F2F875A00355F9F /* PopUpViewController.m */,
+				3E0F608E1F41D31A004127CD /* cam.png */,
 				3E29A6191F277F6E0068D58F /* profile.png */,
 				3E2E23271F3088200091F9E0 /* edit.png */,
 				3E6CD8851F2A12DF00AB8CFD /* Main.storyboard */,
@@ -366,11 +369,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E4DE97D1F34AA73002A4F75 /* presDB.sql in Resources */,
 				3E2E23281F3088200091F9E0 /* edit.png in Resources */,
+				3E0F60911F431058004127CD /* preDB.sql in Resources */,
 				3E29A5F31F2764450068D58F /* LaunchScreen.storyboard in Resources */,
 				3E29A5F01F2764450068D58F /* Assets.xcassets in Resources */,
 				3E29A61A1F277F6E0068D58F /* profile.png in Resources */,
+				3E0F608F1F41D31A004127CD /* cam.png in Resources */,
 				3E6CD8871F2A12DF00AB8CFD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

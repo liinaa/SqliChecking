@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController <UITableViewDataSource, UITextViewDelegate>{
-    NSDictionary* tab;
+    NSMutableDictionary* tab;
     NSArray* semaine;
     NSMutableDictionary* jours;
     NSMutableDictionary* dureeTotal;
-    NSArray *jourSemaine;
     NSMutableArray* lundis;
 }
 
@@ -26,7 +25,7 @@
 - (IBAction)startOBLE:(id)sender;
 - (void) verifyStartOBLE;
 - (IBAction)handleAutoAlerte:(id)sender;
-- (NSString*) userWorkTime;
+- (NSArray*) userWorkTime:(NSString*)start until:(NSString*)end;
 
 @end
 

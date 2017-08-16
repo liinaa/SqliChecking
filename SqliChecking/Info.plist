@@ -42,5 +42,7 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>$(PRODUCT_NAME) uses Photos</string>
+    <key>NSCameraUsageDescription</key>
+    <string>${PRODUCT_NAME} Camera Usage</string>
 </dict>
 </plist>
