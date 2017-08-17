@@ -78,6 +78,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -144,7 +149,6 @@
 - (IBAction)firstNameEdit:(id)sender {
     self.firstName.userInteractionEnabled = YES;
     [self.firstName becomeFirstResponder];
-
 }
 
 - (IBAction)lastNameEdit:(id)sender {
@@ -324,14 +328,34 @@
         else{
             return [[tab objectAtIndex:0] objectAtIndex:0];
         }
-    
-
 }
 
 - (void) saveImageCam{
     NSData* imageData = UIImageJPEGRepresentation(self.imageView.image,0.6);
     UIImage* compressedImage = [UIImage imageWithData:imageData];
    UIImageWriteToSavedPhotosAlbum(compressedImage, self, nil, nil);
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    float newVerticalPosition = -keyboardSize.height+80;
+    
+    [self moveFrameToVerticalPosition:newVerticalPosition forDuration:0.3f];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    [self moveFrameToVerticalPosition:0.0f forDuration:0.3f];
+}
+
+
+- (void)moveFrameToVerticalPosition:(float)position forDuration:(float)duration {
+    CGRect frame = self.view.frame;
+    frame.origin.y = position;
+    
+    [UIView animateWithDuration:duration animations:^{
+        self.view.frame = frame;
+    }];
 }
 
 

@@ -32,14 +32,12 @@
     [formatter setDateFormat:@"dd MMMM yyyy"];
     NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     [formatter setLocale:usLocale];
-    NSString *previousMonday = [formatter stringFromDate:[self getMondaysDate:dateX]];
-    NSLog(@"previousMonday date ===> : %@",previousMonday);
     
-    NSDate *d = [self getMondaysDate:dateX];
+    NSDate *d = [self getPreviousMonday:dateX];
     self->lundis = [[NSMutableArray alloc]init];
     [self->lundis addObject:d];
     for (int i=1; i<4; i++){
-        [self->lundis addObject:[self getMondaysDate:[self->lundis objectAtIndex:i-1]]];
+        [self->lundis addObject:[self getPreviousMonday:[self->lundis objectAtIndex:i-1]]];
     }
     for (NSDate* d in self->lundis) {
         NSLog(@"%@", [formatter stringFromDate:d]);
@@ -55,18 +53,14 @@
         if(i!=0)
         d2 = [lundis objectAtIndex:i-1];
         else  d2 = [NSDate date];
-        NSLog(@"entre le %@ et le %@ ",d1,d2);
         BOOL temp = true;
         NSMutableDictionary *dict = [[NSMutableDictionary alloc]init] ;
         for (NSArray* sarr in [self userWorkTime:d1 until:[dateFormatter stringFromDate:[d2 dateByAddingTimeInterval:-24*60*60]]]) {
             [dict setObject:[sarr objectAtIndex:1] forKey:[sarr objectAtIndex:0]];
             temp = false;
-            NSLog(@"%@",[sarr objectAtIndex:0]);
-            NSLog(@"%@",[sarr objectAtIndex:1]);
         }
         if(!temp)
             [arrOfDict addObject:dict];
-       // NSLog(@"arrofDict %@",arrOfDict);
     }
     
     NSMutableDictionary* tab1 = [[NSMutableDictionary alloc]init];
@@ -92,16 +86,16 @@
             else return NSOrderedAscending;
         }] forKey:key];
         }];
-   [tab enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-       
-                __block NSNumber *temp = 0;
     
-                [obj enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-                    temp = @([temp integerValue]+ [obj integerValue]);
-                    
+     __block NSString *resultDureeTotal;
+    
+   [tab enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+       dureeAccum = 0;
+                [obj enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull subKey, id  _Nonnull subObj, BOOL * _Nonnull stop) {
+                    dureeAccum = [[self timeToSeconds:subObj] intValue] + dureeAccum;
+                    resultDureeTotal = [self secondsToTime:[@(dureeAccum) stringValue]] ;
                 }];
-       
-        [dureeTotal setObject:temp forKey:key];
+        [dureeTotal setObject:resultDureeTotal forKey:key];
    }];
 }
 
@@ -130,13 +124,8 @@
 - (NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     NSString *sectionTitle = [semaine objectAtIndex:section];
     NSString *dt = [dureeTotal objectForKey:sectionTitle];
-  /*  NSDateFormatter *dureeFormatter = [[NSDateFormatter alloc] init];
-    [dureeFormatter setDateFormat:@"HH:mm"];
-    NSDateFormatter *dureeFormatter1 = [[NSDateFormatter alloc] init];
-    [dureeFormatter1 setDateFormat:@"HH"];
-    dt = [dureeFormatter stringFromDate:[dureeFormatter1 dateFromString:dt]];*/
-    //HH'h' mm'm'
-    return [[semaine objectAtIndex:section] stringByAppendingString:[NSString stringWithFormat:@"                            %@ h",dt]];
+    NSArray *hourMinute = [dt componentsSeparatedByString:@":"];
+    return [[semaine objectAtIndex:section] stringByAppendingString:[NSString stringWithFormat:@"              %@h %@min",[hourMinute objectAtIndex:0],[hourMinute objectAtIndex:1]]];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -173,7 +162,8 @@
     return cell;
 }
 
-- (NSDate*) getMondaysDate:(NSDate*)dateX{
+ // Previous Monday of dateX
+- (NSDate*) getPreviousMonday:(NSDate*)dateX{
     if(dateX == nil){
        dateX = [NSDate date];
     }
@@ -184,6 +174,8 @@
                                                  options:NSCalendarMatchNextTime | NSCalendarSearchBackwards];
     return previousMonday;
 }
+
+//Orange BeaconTag
 
 - (IBAction)handleAutoAlerte:(id)sender {
     UISegmentedControl * segmentedControl	= (UISegmentedControl *)sender;
@@ -241,6 +233,30 @@
         return tabl;
     }
 }
+
+- (NSNumber*) timeToSeconds:(NSString*)string{
+   NSArray* components = [string componentsSeparatedByString:@":"];
+   NSString* hour = [components objectAtIndex:0];
+   NSString* minutes;
+    if([components count] == 1)
+        minutes = @"00";
+    else  minutes = [components objectAtIndex:1];
+    
+    return [NSNumber numberWithInteger:[hour integerValue] * 60 * 60 + [minutes integerValue] * 60];
+
+}
+
+- (NSString*) secondsToTime:(NSString*)string{
+    
+    int totalSeconds = [string intValue];
+    
+        int minutes = (totalSeconds / 60) % 60;
+        int hours = totalSeconds / 3600;
+        
+    return [NSString stringWithFormat:@"%02d:%02d",hours, minutes];
+    
+}
+
 
 
 
