@@ -32,7 +32,7 @@
 
 static BOOL autoAlert		= NO;				//	Alertes Customisés --> NO
 static BOOL askPermission	= NO;				//	On ne veut pas que le sdk demande les permissions --> NO
-static BOOL bStarted		= YES;				//	Demarrage automatique du SDK -> YES
+static BOOL bStarted		= NO;				//	Demarrage automatique du SDK -> YES
 
 @implementation AppDelegate
 
@@ -51,9 +51,9 @@ static BOOL bStarted		= YES;				//	Demarrage automatique du SDK -> YES
     }
     
     //	Demarrage ou non de la lib OBLE ( si le location Manager ecoutait deja les Orange Beacon )
-    if ( [OrangeBeacon isAlreadyMonitoredBeacon] ) {
+   // if ( [OrangeBeacon isAlreadyMonitoredBeacon] ) {
         [self startOBLE];
-    }
+   // }
 
     return YES;
 }
@@ -330,8 +330,8 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 #endif
         
         // identifiant d'accès API : login / passwd
-        NSString *login					= @"NoGYYqMURSF6xQ2JzoX3fmokHtDpX0rG";
-        NSString *passwd				= @"bSc0jJCn8nQXeRpf";
+        NSString *login					= @"ait_khouya@hotmail.com";
+        NSString *passwd				= @"!Marrakech95-";
         
         OBConfig *config				= [OBConfig configWithLogin:login password:passwd];
         

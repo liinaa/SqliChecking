@@ -10,6 +10,7 @@
 #import <Photos/Photos.h>
 #import "PopUpViewController.h"
 #import "DBManager.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface SecondViewController ()
 @property (nonatomic, strong) DBManager *dbManager;
@@ -47,22 +48,8 @@
              self.imageView.image = [UIImage imageNamed:@"profile.png"];
         }
         else {
-            
-            NSURL *url = [NSURL fileURLWithPath:[self userImage]];
-            PHFetchResult *fetchResult = [PHAsset fetchAssetsWithALAssetURLs:@[url] options:nil];
-            PHAsset *asset = [fetchResult firstObject];
-            if (asset) {
-                // retrieve the image for the first result
-                PHImageManager *manager = [PHImageManager defaultManager];
-                [manager requestImageForAsset:asset
-                                   targetSize:PHImageManagerMaximumSize
-                                   contentMode:PHImageContentModeDefault
-                                   options:nil
-                                   resultHandler:^void(UIImage *image, NSDictionary *info) {
-                                        self.imageView.image = image;
-                                }];
-            
-                        }
+             NSURL *url = [NSURL URLWithString:[self userImage]];
+            [self imagePicked:url];
         }
          self.firstName.userInteractionEnabled = NO;
          self.secondName.userInteractionEnabled = NO;
@@ -194,6 +181,7 @@
     // If the query was successfully executed then pop the view controller.
     if (self.dbManager.affectedRows != 0) {
         NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
+        [self saveImageCam];
         [self performSegueWithIdentifier:@"popCall" sender:nil];
     }
     else{
@@ -357,6 +345,25 @@
         self.view.frame = frame;
     }];
 }
+
+-(void)imagePicked:(NSURL*)url {
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    [library assetForURL:url resultBlock:^(ALAsset *asset)
+     {
+         UIImage  *copyOfOriginalImage = [UIImage imageWithCGImage:[[asset defaultRepresentation] fullScreenImage] scale:0.5 orientation:UIImageOrientationUp];
+         
+         self.imageView.image = copyOfOriginalImage;
+         self.imageView.layer.cornerRadius = self.imageView.frame.size.width / 2;
+         self.imageView.clipsToBounds = YES;
+     }
+            failureBlock:^(NSError *error)
+     {
+         // error handling
+         NSLog(@"failure-----");
+     }];
+
+}
+
 
 
 

@@ -10,6 +10,8 @@
 #import <OrangeBLE/OrangeBeacon.h>
 #import "AppDelegate.h"
 #import "DBManager.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+
 
 @interface ViewController ()
 
@@ -97,11 +99,19 @@
                 }];
         [dureeTotal setObject:resultDureeTotal forKey:key];
    }];
+    
+    if([self searchUser]){
+        if([self userImage]){
+            [self imagePicked:[NSURL URLWithString:[self userImage]]];
+        }
+         else self.imageView.image = [UIImage imageNamed:@"profile.png"];
+    }
+    else self.imageView.image = [UIImage imageNamed:@"profile.png"];
+    
+    [self startOBLE];
 }
 
--(void)viewWillAppear:(BOOL)animated {
-    _controlAutoAlert.selectedSegmentIndex	= [[AppDelegate sharedAppDelegate] getAutoAlert] ? 0 : 1;
-    
+-(void)viewWillAppear:(BOOL)animated {    
     [self changeUI];
     
     [super viewWillAppear:animated];
@@ -177,22 +187,13 @@
 
 //Orange BeaconTag
 
-- (IBAction)handleAutoAlerte:(id)sender {
-    UISegmentedControl * segmentedControl	= (UISegmentedControl *)sender;
-    BOOL bAutoAlerte						= (segmentedControl.selectedSegmentIndex == 0 ? YES : NO );
-    NSLog(@"handleAutoAlerte() %@", ( bAutoAlerte ? @"YES" : @"NO") );
-    
-    [[AppDelegate sharedAppDelegate] setAutoAlert:bAutoAlerte];
-    [self changeUI];
-}
-
-- (IBAction)stopOBLE:(id)sender
+- (void)stopOBLE
 {
     [[AppDelegate sharedAppDelegate] stopOBLE];
     [self changeUI];
 }
 
-- (IBAction)startOBLE:(id)sender
+- (void)startOBLE
 {
     [[AppDelegate sharedAppDelegate] startOBLE];
     [self changeUI];
@@ -202,8 +203,8 @@
 - (void) changeUI {
     
     BOOL bStarted							= [[AppDelegate sharedAppDelegate] getStarted];
-    [_startBtn setHidden:bStarted];
-    [_stopBtn setHidden:!bStarted];
+  //  [_startBtn setHidden:bStarted];
+   // [_stopBtn setHidden:!bStarted];
     
     if (bStarted) {
         NSTimeInterval interval = 5;
@@ -256,6 +257,47 @@
     return [NSString stringWithFormat:@"%02d:%02d",hours, minutes];
     
 }
+
+-(void)imagePicked:(NSURL*)url{
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    [library assetForURL:url resultBlock:^(ALAsset *asset)
+     {
+         UIImage  *copyOfOriginalImage = [UIImage imageWithCGImage:[[asset defaultRepresentation] fullScreenImage] scale:0.5 orientation:UIImageOrientationUp];
+         
+         self.imageView.image = copyOfOriginalImage;
+         self.imageView.layer.cornerRadius = self.imageView.frame.size.width / 2;
+         self.imageView.clipsToBounds = YES;
+     }
+            failureBlock:^(NSError *error)
+     {
+         // error handling
+         NSLog(@"failure-----");
+     }];
+
+}
+
+- (BOOL) searchUser{
+    NSString *uniqueIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    NSString *query = [[@"select * from user where IDUser ='" stringByAppendingString:uniqueIdentifier] stringByAppendingString:@"' "];
+    self.userInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
+    if([self.userInfo count] != 0){
+        return true;
+    }
+    else return false;
+}
+- (NSString*) userImage{
+    NSString *uniqueIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    NSString *query = [[@"select photo from user where IDUser ='" stringByAppendingString:uniqueIdentifier] stringByAppendingString:@"' "];
+    NSArray *tab = [self.dbManager loadDataFromDB:query];
+    if(tab == nil || ![tab count]){
+        return nil;
+    }
+    else{
+        return [[tab objectAtIndex:0] objectAtIndex:0];
+    }
+}
+
+
 
 
 

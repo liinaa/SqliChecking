@@ -17,18 +17,23 @@
     int dureeAccum;
 }
 
-@property (weak, nonatomic) IBOutlet UISegmentedControl *controlAutoAlert;
-@property (weak, nonatomic) IBOutlet UIButton *stopBtn;
-@property (weak, nonatomic) IBOutlet UIButton *startBtn;
+//@property (weak, nonatomic) IBOutlet UIButton *stopBtn;
+//@property (weak, nonatomic) IBOutlet UIButton *startBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) NSArray *userInfo;
+
 
 - (NSDate*) getPreviousMonday:(NSDate*)dateX;
-- (IBAction)stopOBLE:(id)sender;
-- (IBAction)startOBLE:(id)sender;
+- (void)stopOBLE;
+- (void)startOBLE;
 - (void) verifyStartOBLE;
-- (IBAction)handleAutoAlerte:(id)sender;
+//- (IBAction)handleAutoAlerte:(id)sender;
 - (NSArray*) userWorkTime:(NSString*)start until:(NSString*)end;
 - (NSNumber*) timeToSeconds:(NSString*)string;
 - (NSString*) secondsToTime:(NSString*)string;
+- (void)imagePicked:(NSURL*)url;
+- (BOOL) searchUser;
+- (NSString*) userImage;
 
 @end
 

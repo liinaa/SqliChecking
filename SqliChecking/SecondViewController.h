@@ -47,6 +47,7 @@ UIImagePickerControllerDelegate>{
 - (IBAction)cameraClicked:(id)sender;
 - (NSString*) userImage;
 - (void) saveImageCam;
+-(void)imagePicked:(NSURL*)url;
 
 
 @end
