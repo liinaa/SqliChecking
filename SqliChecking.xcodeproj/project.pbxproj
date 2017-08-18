@@ -32,6 +32,9 @@
 		3E36C3051F387593000D3B8B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E36C3041F387593000D3B8B /* UIKit.framework */; };
 		3E36C3071F387DEC000D3B8B /* OrangeBLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E36C3061F387DEC000D3B8B /* OrangeBLE.framework */; };
 		3E36C3111F38C630000D3B8B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E36C3101F38C630000D3B8B /* libsqlite3.tbd */; };
+		3E449A641F472F3500B1A80B /* OpeningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E449A631F472F3500B1A80B /* OpeningViewController.m */; };
+		3E449A661F47359E00B1A80B /* logo_Ckecking.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E449A651F47359E00B1A80B /* logo_Ckecking.png */; };
+		3E449A681F4735A700B1A80B /* logo_sqli.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E449A671F4735A700B1A80B /* logo_sqli.png */; };
 		3E6CD8871F2A12DF00AB8CFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6CD8851F2A12DF00AB8CFD /* Main.storyboard */; };
 		A2084A68FD5E3CA201D24207 /* libPods-SqliChecking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3582B4A1B3C28F82A7CE97A7 /* libPods-SqliChecking.a */; };
 /* End PBXBuildFile section */
@@ -92,6 +95,10 @@
 		3E36C3041F387593000D3B8B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3E36C3061F387DEC000D3B8B /* OrangeBLE.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OrangeBLE.framework; sourceTree = "<group>"; };
 		3E36C3101F38C630000D3B8B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		3E449A621F472F3500B1A80B /* OpeningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpeningViewController.h; sourceTree = "<group>"; };
+		3E449A631F472F3500B1A80B /* OpeningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpeningViewController.m; sourceTree = "<group>"; };
+		3E449A651F47359E00B1A80B /* logo_Ckecking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_Ckecking.png; sourceTree = "<group>"; };
+		3E449A671F4735A700B1A80B /* logo_sqli.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_sqli.png; sourceTree = "<group>"; };
 		3E6CD8861F2A12DF00AB8CFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		41334ED1ECE9A77B456D0E7F /* Pods-SqliCheckingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SqliCheckingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SqliCheckingUITests/Pods-SqliCheckingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4EAFB5090E3C7C581E725808 /* Pods-SqliChecking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SqliChecking.release.xcconfig"; path = "Pods/Target Support Files/Pods-SqliChecking/Pods-SqliChecking.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +185,8 @@
 				3E0F60901F431058004127CD /* preDB.sql */,
 				3E29A5E61F2764450068D58F /* AppDelegate.h */,
 				3E29A5E71F2764450068D58F /* AppDelegate.m */,
+				3E449A621F472F3500B1A80B /* OpeningViewController.h */,
+				3E449A631F472F3500B1A80B /* OpeningViewController.m */,
 				3E29A5E91F2764450068D58F /* ViewController.h */,
 				3E29A5EA1F2764450068D58F /* ViewController.m */,
 				3E29A6211F27A4560068D58F /* SecondViewController.h */,
@@ -186,6 +195,8 @@
 				3E2C279B1F2F556100355F9F /* DBManager.m */,
 				3E2C27D91F2F875A00355F9F /* PopUpViewController.h */,
 				3E2C27DA1F2F875A00355F9F /* PopUpViewController.m */,
+				3E449A651F47359E00B1A80B /* logo_Ckecking.png */,
+				3E449A671F4735A700B1A80B /* logo_sqli.png */,
 				3E0F608E1F41D31A004127CD /* cam.png */,
 				3E29A6191F277F6E0068D58F /* profile.png */,
 				3E2E23271F3088200091F9E0 /* edit.png */,
@@ -369,12 +380,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E449A661F47359E00B1A80B /* logo_Ckecking.png in Resources */,
 				3E2E23281F3088200091F9E0 /* edit.png in Resources */,
 				3E0F60911F431058004127CD /* preDB.sql in Resources */,
 				3E29A5F31F2764450068D58F /* LaunchScreen.storyboard in Resources */,
 				3E29A5F01F2764450068D58F /* Assets.xcassets in Resources */,
 				3E29A61A1F277F6E0068D58F /* profile.png in Resources */,
 				3E0F608F1F41D31A004127CD /* cam.png in Resources */,
+				3E449A681F4735A700B1A80B /* logo_sqli.png in Resources */,
 				3E6CD8871F2A12DF00AB8CFD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,6 +564,7 @@
 				3E29A5EB1F2764450068D58F /* ViewController.m in Sources */,
 				3E2C279C1F2F556100355F9F /* DBManager.m in Sources */,
 				3E29A5E81F2764450068D58F /* AppDelegate.m in Sources */,
+				3E449A641F472F3500B1A80B /* OpeningViewController.m in Sources */,
 				3E29A5E51F2764450068D58F /* main.m in Sources */,
 				3E2C27DC1F2F875A00355F9F /* PopUpViewController.m in Sources */,
 			);

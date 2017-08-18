@@ -88,15 +88,21 @@
 
 - (void) imagePickerController: (UIImagePickerController *) picker
  didFinishPickingMediaWithInfo: (NSDictionary *) info {
+    
     if(_photo == nil){
         _photo = [info objectForKey:UIImagePickerControllerOriginalImage];
-    }
+        }
     else     _photo = [info objectForKey:UIImagePickerControllerEditedImage];
-
-     NSURL *imageURL = [info valueForKey:UIImagePickerControllerReferenceURL];
-     self.imgData = [imageURL absoluteString];
+    
     self.imageView.image = _photo;
-    [picker dismissViewControllerAnimated:YES completion:NULL];
+    if(picker.sourceType==UIImagePickerControllerSourceTypeCamera){
+            // save the image to camera roll
+            [self saveImageCam];
+            NSLog(@"photo taken by camera saved");
+    }
+    NSURL *imageURL = [info valueForKey:UIImagePickerControllerReferenceURL];
+    self.imgData = [imageURL absoluteString];
+        [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (IBAction)editPhotoClicked:(id)sender {
@@ -181,7 +187,6 @@
     // If the query was successfully executed then pop the view controller.
     if (self.dbManager.affectedRows != 0) {
         NSLog(@"Query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
-        [self saveImageCam];
         [self performSegueWithIdentifier:@"popCall" sender:nil];
     }
     else{

@@ -17,8 +17,6 @@
     int dureeAccum;
 }
 
-//@property (weak, nonatomic) IBOutlet UIButton *stopBtn;
-//@property (weak, nonatomic) IBOutlet UIButton *startBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) NSArray *userInfo;
 
@@ -27,13 +25,12 @@
 - (void)stopOBLE;
 - (void)startOBLE;
 - (void) verifyStartOBLE;
-//- (IBAction)handleAutoAlerte:(id)sender;
 - (NSArray*) userWorkTime:(NSString*)start until:(NSString*)end;
 - (NSNumber*) timeToSeconds:(NSString*)string;
 - (NSString*) secondsToTime:(NSString*)string;
-- (void)imagePicked:(NSURL*)url;
-- (BOOL) searchUser;
-- (NSString*) userImage;
+- (void)imagePicked:(NSURL*)url;  // get Image from Asset URL
+- (BOOL) searchUser;    // true if user exists in sqlite3 db 
+- (NSString*) userImage;  //from sqlit3 db
 
 @end
 

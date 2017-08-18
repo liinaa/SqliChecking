@@ -101,7 +101,7 @@
    }];
     
     if([self searchUser]){
-        if([self userImage]){
+        if([self userImage] != nil){
             [self imagePicked:[NSURL URLWithString:[self userImage]]];
         }
          else self.imageView.image = [UIImage imageNamed:@"profile.png"];
@@ -203,8 +203,6 @@
 - (void) changeUI {
     
     BOOL bStarted							= [[AppDelegate sharedAppDelegate] getStarted];
-  //  [_startBtn setHidden:bStarted];
-   // [_stopBtn setHidden:!bStarted];
     
     if (bStarted) {
         NSTimeInterval interval = 5;
