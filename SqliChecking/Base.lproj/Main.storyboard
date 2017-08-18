@@ -21,11 +21,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_sqli_institut1.png" translatesAutoresizingMaskIntoConstraints="NO" id="pFk-fq-3oM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_sqli.png" translatesAutoresizingMaskIntoConstraints="NO" id="pFk-fq-3oM">
                                 <rect key="frame" x="117" y="227" width="208" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1_Primary_logo_on_transparent_237x63.png" translatesAutoresizingMaskIntoConstraints="NO" id="XF2-rC-naf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_Ckecking.png" translatesAutoresizingMaskIntoConstraints="NO" id="XF2-rC-naf">
                                 <rect key="frame" x="72" y="486" width="230" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -371,10 +371,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1_Primary_logo_on_transparent_237x63.png" width="223" height="62"/>
         <image name="cam.png" width="512" height="512"/>
         <image name="edit.png" width="512" height="512"/>
-        <image name="logo_sqli_institut1.png" width="244" height="101"/>
+        <image name="logo_Ckecking.png" width="223" height="62"/>
+        <image name="logo_sqli.png" width="244" height="101"/>
         <image name="profile.png" width="200" height="203"/>
     </resources>
     <inferredMetricsTieBreakers>

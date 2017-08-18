@@ -101,10 +101,10 @@
    }];
     
     if([self searchUser]){
-        if([self userImage] != nil){
-            [self imagePicked:[NSURL URLWithString:[self userImage]]];
+        if([self userImage] == nil || self.imageView.image == nil) {
+            self.imageView.image = [UIImage imageNamed:@"profile.png"];
         }
-         else self.imageView.image = [UIImage imageNamed:@"profile.png"];
+         else [self imagePicked:[NSURL URLWithString:[self userImage]]];
     }
     else self.imageView.image = [UIImage imageNamed:@"profile.png"];
     

@@ -176,9 +176,11 @@
             query = [NSString stringWithFormat:@"insert into user values(\"%@\", \"%@\", \"%@\", \"%@\",\"%@\",\"%@\",\"%@\")", uniqueIdentifier, self.firstName.text, self.secondName.text,self.function.text,self.email.text,self.tel.text,self.imgData];
             NSLog(@"%@",self.imgData);
         }
-        else {
+        else { if(self.imgData != nil){
             query = [NSString stringWithFormat:@"update user set firstName = \"%@\",lastName = \"%@\",function = \"%@\", email = \"%@\", tel = \"%@\", photo = \"%@\" where IDUser = \"%@\" ", self.firstName.text, self.secondName.text,self.function.text,self.email.text,self.tel.text,self.imgData,uniqueIdentifier];
             NSLog(@"%@",self.imgData);
+        }
+            else query = [NSString stringWithFormat:@"update user set firstName = \"%@\",lastName = \"%@\",function = \"%@\", email = \"%@\", tel = \"%@\", photo = \"%@\" where IDUser = \"%@\" ", self.firstName.text, self.secondName.text,self.function.text,self.email.text,self.tel.text,[self userImage],uniqueIdentifier];
         }
 
     // Execute the query.
