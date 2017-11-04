@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"preDB.sql"];
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"base.sql"];
     NSDate *dateX;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd MMMM yyyy"];
@@ -107,7 +107,6 @@
          else [self imagePicked:[NSURL URLWithString:[self userImage]]];
     }
     else self.imageView.image = [UIImage imageNamed:@"profile.png"];
-    
     [self startOBLE];
 }
 
@@ -149,10 +148,8 @@
     }
     
     NSString *sectionTitle = [semaine objectAtIndex:indexPath.section];
-    
     NSString *jourAffich = [[jours objectForKey:sectionTitle] objectAtIndex:indexPath.row];
     NSString *duree = [[tab objectForKey:sectionTitle] objectForKey:jourAffich];
-    
     NSDateFormatter *dureeFormatter = [[NSDateFormatter alloc] init];
     [dureeFormatter setDateFormat:@"HH:mm"];
     NSDateFormatter *dureeFormatter1 = [[NSDateFormatter alloc] init];
@@ -281,7 +278,8 @@
     if([self.userInfo count] != 0){
         return true;
     }
-    else return false;
+    else { NSLog(@"Search user is false");
+        return false;}
 }
 - (NSString*) userImage{
     NSString *uniqueIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];

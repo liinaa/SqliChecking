@@ -32,7 +32,7 @@
     self.tel.delegate = self;
     
     // Initialize the dbManager object.
-    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"preDB.sql"];
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"base.sql"];
      [self loadData];
     
     if([self searchUser]){

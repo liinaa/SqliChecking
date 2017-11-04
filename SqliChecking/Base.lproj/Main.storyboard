@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_Ckecking.png" translatesAutoresizingMaskIntoConstraints="NO" id="XF2-rC-naf">
-                                <rect key="frame" x="72" y="486" width="230" height="92"/>
+                                <rect key="frame" x="72" y="492" width="230" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>

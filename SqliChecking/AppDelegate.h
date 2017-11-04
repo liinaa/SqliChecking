@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <OrangeBLE/OrangeBeacon.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, OrangeBeaconDelegate, CLLocationManagerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 //BeaconTag
